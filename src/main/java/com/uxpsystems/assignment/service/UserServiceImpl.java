@@ -3,8 +3,8 @@ package com.uxpsystems.assignment.service;
 import com.uxpsystems.assignment.config.NotFoundException;
 import com.uxpsystems.assignment.config.RequestNotValidException;
 import com.uxpsystems.assignment.dao.User;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -22,6 +22,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Secured({"ROLE_USER","ROLE_ADMIN"})
     public User getUser(long id) {
         Optional<User> byId = userRepository.findById(id);
         if(!byId.isPresent()){
