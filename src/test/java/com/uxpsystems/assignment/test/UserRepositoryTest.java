@@ -41,4 +41,31 @@ public class UserRepositoryTest {
                 .isEqualTo(user.getUsername());
     }
 
+    @Test
+    public void whenDelete_thenReturnEmpty() {
+        // set user data
+        User user = new User();
+        user.setUsername("jhon");
+        user.setUsername("Password");
+        user.setUsername("Activated");
+        entityManager.persist(user);
+        entityManager.flush();
+
+        // get all user
+        List<User> users = userRepository.findAll();
+
+        // find there is user present
+        assertThat(users.get(0).getUsername())
+                .isEqualTo(user.getUsername());
+        //remove user
+        entityManager.remove(user);
+        // get users
+         users = userRepository.findAll();
+        // assert on non empty result
+        assertThat(users.isEmpty())
+                .isEqualTo(true);
+
+
+    }
+
 }

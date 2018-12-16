@@ -3,10 +3,8 @@ package com.uxpsystems.assignment.controller;
 import com.uxpsystems.assignment.dao.User;
 import com.uxpsystems.assignment.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
