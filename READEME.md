@@ -8,11 +8,11 @@
 ### Features 
 
 #### This  app exposes following rest APIs 
-* GET /assignment/user  get all users in db 
-* GET /assignment/user/{id} return single user with id
-* POST /assignment/user  with payload user,  user will be creative in db 
-* DELETE /assignment/user with payload user, delete user with user.id
-* PUT /assignment/user with payload user,  upate user with user.id
+* GET `/assignment/user`  get all users in db 
+* GET `/assignment/user/{id}` return single user with id
+* POST `/assignment/user`  with payload user,  user will be creative in db 
+* DELETE `/assignment/user` with payload user, delete user with user.id
+* PUT `/assignment/user` with payload user,  upate user with user.id
 * Sample user playload
 ` {
         "username": "jon",
